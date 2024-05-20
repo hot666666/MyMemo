@@ -14,7 +14,7 @@ struct TodoDetailView: View {
     
     var body: some View {
         ZStack{
-            Text("Todo List를\n추가해 보세요.")
+            Text("투두리스트를\n추가해 보세요.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .font(.title)
                 .bold()

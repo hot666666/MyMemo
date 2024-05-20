@@ -13,7 +13,7 @@ struct TodoListView: View {
     var body: some View {
         ZStack{
             if todoListViewModel.todoList.isEmpty {
-                DefaultView(title: "Todo List를\n추가해 보세요.", subTitle: "\"아침 헬스장 가기\"\n\"도서관 가기\"\n\"밥 잘 먹기\"")
+                DefaultView(title: "투두리스트를\n추가해 보세요.", subTitle: "\"아침 헬스장 가기\"\n\"도서관 가기\"\n\"밥 잘 먹기\"")
                     .padding(20)
             } else {
                 TopRightButtonView(action: {
@@ -50,12 +50,12 @@ struct TodoListView: View {
     }
 }
 
-struct TodoListContentView: View {
+private struct TodoListContentView: View {
     @Environment(TodoListViewModel.self) var vm
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(vm.todoListCount)개의 Todo List가\n있습니다.")
+            Text("\(vm.todoListCount)개의 할 일이\n있습니다.")
                 .font(.title)
                 .bold()
                 .padding(.bottom, 30)
