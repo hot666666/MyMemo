@@ -28,6 +28,9 @@
 		45B51DF02BFB18DA00AE56FE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DEF2BFB18DA00AE56FE /* Todo.swift */; };
 		45B51DF22BFB18F700AE56FE /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF12BFB18F700AE56FE /* TodoListViewModel.swift */; };
 		45B51DF42BFB20A900AE56FE /* TopRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF32BFB20A900AE56FE /* TopRightButtonView.swift */; };
+		45B51DF62BFB42E300AE56FE /* TextMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF52BFB42E300AE56FE /* TextMemo.swift */; };
+		45B51DF92BFB448700AE56FE /* TextMemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */; };
+		45B51DFB2BFB4EF600AE56FE /* TextMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		45B51DEF2BFB18DA00AE56FE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		45B51DF12BFB18F700AE56FE /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		45B51DF32BFB20A900AE56FE /* TopRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightButtonView.swift; sourceTree = "<group>"; };
+		45B51DF52BFB42E300AE56FE /* TextMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemo.swift; sourceTree = "<group>"; };
+		45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoDetailView.swift; sourceTree = "<group>"; };
+		45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +245,10 @@
 		45B51DD02BFAD98F00AE56FE /* TextMemo */ = {
 			isa = PBXGroup;
 			children = (
+				45B51DF52BFB42E300AE56FE /* TextMemo.swift */,
 				45B51DDA2BFADA6A00AE56FE /* TextMemoView.swift */,
+				45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */,
+				45B51DF72BFB446000AE56FE /* TextMemoDetail */,
 			);
 			path = TextMemo;
 			sourceTree = "<group>";
@@ -311,6 +320,14 @@
 				45B51DEB2BFAF99F00AE56FE /* TodoDetailView.swift */,
 			);
 			path = TodoDetail;
+			sourceTree = "<group>";
+		};
+		45B51DF72BFB446000AE56FE /* TextMemoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */,
+			);
+			path = TextMemoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,10 +461,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B51DD52BFADA2C00AE56FE /* SettingView.swift in Sources */,
+				45B51DFB2BFB4EF600AE56FE /* TextMemoViewModel.swift in Sources */,
 				45B51DE92BFAF28500AE56FE /* Date+Extension.swift in Sources */,
 				45B51D9D2BFAD63900AE56FE /* HomeView.swift in Sources */,
 				45B51DDD2BFADA7800AE56FE /* TodoListView.swift in Sources */,
+				45B51DF92BFB448700AE56FE /* TextMemoDetailView.swift in Sources */,
 				45B51DF22BFB18F700AE56FE /* TodoListViewModel.swift in Sources */,
+				45B51DF62BFB42E300AE56FE /* TextMemo.swift in Sources */,
 				45B51DDF2BFADBA800AE56FE /* HomeViewModel.swift in Sources */,
 				45B51DE62BFAE35C00AE56FE /* DefaultView.swift in Sources */,
 				45B51DD72BFADA4700AE56FE /* TimerView.swift in Sources */,
