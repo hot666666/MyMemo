@@ -12,7 +12,7 @@ import SwiftData
 struct MyMemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
