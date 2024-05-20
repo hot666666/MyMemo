@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */; };
 		45B51D9D2BFAD63900AE56FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9C2BFAD63900AE56FE /* ContentView.swift */; };
-		45B51D9F2BFAD63900AE56FE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9E2BFAD63900AE56FE /* Item.swift */; };
 		45B51DA12BFAD63A00AE56FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B51DA02BFAD63A00AE56FE /* Assets.xcassets */; };
 		45B51DA42BFAD63A00AE56FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B51DA32BFAD63A00AE56FE /* Preview Assets.xcassets */; };
 		45B51DAE2BFAD63A00AE56FE /* MyMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DAD2BFAD63A00AE56FE /* MyMemoTests.swift */; };
@@ -38,7 +37,6 @@
 		45B51D972BFAD63900AE56FE /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoApp.swift; sourceTree = "<group>"; };
 		45B51D9C2BFAD63900AE56FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		45B51D9E2BFAD63900AE56FE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		45B51DA02BFAD63A00AE56FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B51DA32BFAD63A00AE56FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45B51DA92BFAD63A00AE56FE /* MyMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,10 +94,11 @@
 		45B51D992BFAD63900AE56FE /* MyMemo */ = {
 			isa = PBXGroup;
 			children = (
-				45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */,
-				45B51D9C2BFAD63900AE56FE /* ContentView.swift */,
-				45B51D9E2BFAD63900AE56FE /* Item.swift */,
-				45B51DA02BFAD63A00AE56FE /* Assets.xcassets */,
+				45B51DC62BFAD69C00AE56FE /* Application */,
+				45B51DC82BFAD6E100AE56FE /* Presentation */,
+				45B51DC92BFAD72A00AE56FE /* Domain */,
+				45B51DCD2BFAD79400AE56FE /* Data */,
+				45B51DC72BFAD6C400AE56FE /* Resource */,
 				45B51DA22BFAD63A00AE56FE /* Preview Content */,
 			);
 			path = MyMemo;
@@ -128,6 +127,76 @@
 				45B51DB92BFAD63A00AE56FE /* MyMemoUITestsLaunchTests.swift */,
 			);
 			path = MyMemoUITests;
+			sourceTree = "<group>";
+		};
+		45B51DC62BFAD69C00AE56FE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		45B51DC72BFAD6C400AE56FE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DA02BFAD63A00AE56FE /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		45B51DC82BFAD6E100AE56FE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DCE2BFAD7C800AE56FE /* Model */,
+				45B51D9C2BFAD63900AE56FE /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		45B51DC92BFAD72A00AE56FE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DCC2BFAD78200AE56FE /* Interface */,
+				45B51DCB2BFAD77600AE56FE /* UseCase */,
+				45B51DCA2BFAD76B00AE56FE /* Enitity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		45B51DCA2BFAD76B00AE56FE /* Enitity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enitity;
+			sourceTree = "<group>";
+		};
+		45B51DCB2BFAD77600AE56FE /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		45B51DCC2BFAD78200AE56FE /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		45B51DCD2BFAD79400AE56FE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		45B51DCE2BFAD7C800AE56FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +330,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B51D9D2BFAD63900AE56FE /* ContentView.swift in Sources */,
-				45B51D9F2BFAD63900AE56FE /* Item.swift in Sources */,
 				45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
