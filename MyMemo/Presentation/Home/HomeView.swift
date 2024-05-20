@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var activeTab: Tab = .voiceMemo
     @State var todoListViewModel: TodoListViewModel = .init()
+    @State var textMemoViewModel: TextMemoViewModel = .init()
     
     var body: some View {
         VStack {
@@ -19,6 +20,7 @@ struct HomeView: View {
                     .tag(Tab.todoList)
                 
                 TextMemoView()
+                    .environment(textMemoViewModel)
                     .tag(Tab.textMemo)
                 
                 VoiceMemoView()
