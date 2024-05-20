@@ -9,11 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @State var activeTab: Tab = .voiceMemo
+    @State var todoListViewModel: TodoListViewModel = .init()
     
     var body: some View {
         VStack {
             TabView(selection: $activeTab) {
                 TodoListView()
+                    .environment(todoListViewModel)
                     .tag(Tab.todoList)
                 
                 TextMemoView()
@@ -46,9 +48,9 @@ struct HomeView: View {
                 }
             }
             .padding(10)
-            .background(Color.gray.gradient) /// TabBar Color
+            .background(Color.black.opacity(0.1).gradient) /// TabBar Color
         }
-        .shadow(radius: 10)
+        .shadow(radius: 30)
     }
 }
 
