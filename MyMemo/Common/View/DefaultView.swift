@@ -10,6 +10,13 @@ import SwiftUI
 struct DefaultView: View {
     var title: String
     var subTitle: String
+    var icon: String
+    
+    init(title: String, subTitle: String, icon: String = "pencil") {
+        self.title = title
+        self.subTitle = subTitle
+        self.icon = icon
+    }
     
     var body: some View {
         ZStack {
@@ -19,7 +26,7 @@ struct DefaultView: View {
                 .bold()
             
             VStack{
-                Image(systemName: "pencil")
+                Image(systemName: icon)
                     .font(.title3)
                     .padding(3)
                 VStack{
