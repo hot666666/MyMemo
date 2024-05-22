@@ -11,6 +11,11 @@ struct HomeView: View {
     @State var activeTab: Tab = .voiceMemo
     @State var todoListViewModel: TodoListViewModel = .init()
     @State var textMemoViewModel: TextMemoViewModel = .init()
+    @State var voiceMemoViewModel: VoiceMemoViewModel
+    
+    init(container: DIContainer){
+        _voiceMemoViewModel = State(initialValue: .init(container: container))
+    }
     
     var body: some View {
         VStack {
@@ -24,6 +29,7 @@ struct HomeView: View {
                     .tag(Tab.textMemo)
                 
                 VoiceMemoView()
+                    .environment(voiceMemoViewModel)
                     .tag(Tab.voiceMemo)
                 
                 TimerView()
@@ -77,5 +83,7 @@ private struct TabItem: View {
 }
 
 #Preview {
-    HomeView()
+    let container: DIContainer = .init()
+    return HomeView(container: container)
+        .environment(container)
 }
