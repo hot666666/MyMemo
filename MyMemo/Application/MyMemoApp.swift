@@ -11,8 +11,11 @@ import SwiftData
 @main
 struct MyMemoApp: App {
     var body: some Scene {
+        @State var container: DIContainer = .init()
+        
         WindowGroup {
-            HomeView()
+            HomeView(container: container)
+                .environment(container)
         }
     }
 }
