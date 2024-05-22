@@ -40,6 +40,7 @@
 		45B51E3A2BFDA9C900AE56FE /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E392BFDA9C900AE56FE /* AudioPlayerView.swift */; };
 		45B51E3C2BFDAA0E00AE56FE /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45B51E3B2BFDAA0E00AE56FE /* example.mp3 */; };
 		45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */; };
+		45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E402BFE172A00AE56FE /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		45B51E392BFDA9C900AE56FE /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		45B51E3B2BFDAA0E00AE56FE /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		45B51E402BFE172A00AE56FE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				45B51DD62BFADA4700AE56FE /* TimerView.swift */,
+				45B51E402BFE172A00AE56FE /* TimerViewModel.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */,
 				45B51DD52BFADA2C00AE56FE /* SettingView.swift in Sources */,
 				45B51E372BFD96B600AE56FE /* AudioRecordService.swift in Sources */,
 				45B51DFB2BFB4EF600AE56FE /* TextMemoViewModel.swift in Sources */,
