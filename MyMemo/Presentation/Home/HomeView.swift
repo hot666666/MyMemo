@@ -11,6 +11,7 @@ struct HomeView: View {
     @State var activeTab: Tab = .voiceMemo
     @State var todoListViewModel: TodoListViewModel = .init()
     @State var textMemoViewModel: TextMemoViewModel = .init()
+    @State var timerViewModel: TimerViewModel = .init()
     @State var voiceMemoViewModel: VoiceMemoViewModel
     
     init(container: DIContainer){
@@ -33,6 +34,7 @@ struct HomeView: View {
                     .tag(Tab.voiceMemo)
                 
                 TimerView()
+                    .environment(timerViewModel)
                     .tag(Tab.timer)
                 
                 SettingView()
