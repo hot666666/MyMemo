@@ -13,11 +13,27 @@ enum AudioRecordServiceError: Error{
 }
 
 protocol AudioRecordServiceType {
+    var isAudioCaptureAuthorized: Bool { get }
+    func requestPermission()
     func startRecording(fileURL: URL) async throws
     func stopRecording() async -> URL? 
 }
 
 actor AudioRecordService: AudioRecordServiceType {
+    nonisolated var isAudioCaptureAuthorized: Bool {
+        AVCaptureDevice.authorizationStatus(for: .audio) == .authorized
+    }
+    
+    nonisolated func requestPermission() {
+        AVCaptureDevice.requestAccess(for: .audio) { granted in
+            if granted {
+                print("Access granted")
+            } else {
+                print("Access not granted")
+            }
+        }
+    }
+    
     private var audioRecorder: AVAudioRecorder? = nil
     private var settings: [String: Int] = [
         AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

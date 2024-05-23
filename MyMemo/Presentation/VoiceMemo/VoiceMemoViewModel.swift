@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import AVFoundation
 
 @Observable
 class VoiceMemoViewModel{
@@ -104,26 +103,10 @@ extension VoiceMemoViewModel {
             return
         }
         
-        if audioCaptureAuthorized == .authorized {
+        if container.audioRecordService.isAudioCaptureAuthorized {
             await startRecording()
         } else {
-            requestPermission()
-        }
-    }
-    
-    private var audioCaptureAuthorized: AVAuthorizationStatus {
-        AVCaptureDevice.authorizationStatus(for: .audio)
-    }
-    
-    private func requestPermission() {
-        AVCaptureDevice.requestAccess(for: .audio) { granted in
-            DispatchQueue.main.async {
-                if granted {
-                    print("Access granted")
-                } else {
-                    print("Access not granted")
-                }
-            }
+            container.audioRecordService.requestPermission()
         }
     }
     
