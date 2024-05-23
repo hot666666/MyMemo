@@ -41,6 +41,8 @@
 		45B51E3C2BFDAA0E00AE56FE /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45B51E3B2BFDAA0E00AE56FE /* example.mp3 */; };
 		45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */; };
 		45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E402BFE172A00AE56FE /* TimerViewModel.swift */; };
+		45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E432BFEBF9300AE56FE /* NotificationService.swift */; };
+		45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,9 @@
 		45B51E3B2BFDAA0E00AE56FE /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		45B51E402BFE172A00AE56FE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		45B51E432BFEBF9300AE56FE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B51E472BFEC68300AE56FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,7 @@
 		45B51D992BFAD63900AE56FE /* MyMemo */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E472BFEC68300AE56FE /* Info.plist */,
 				45B51E3D2BFDCE9900AE56FE /* Dependency */,
 				45B51DC62BFAD69C00AE56FE /* Application */,
 				45B51DC82BFAD6E100AE56FE /* Presentation */,
@@ -191,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */,
+				45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -371,6 +378,7 @@
 		45B51E342BFD969800AE56FE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E422BFEBF8400AE56FE /* Notification */,
 				45B51E352BFD96A000AE56FE /* AudioRecord */,
 			);
 			path = Service;
@@ -398,6 +406,14 @@
 				45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */,
 			);
 			path = Dependency;
+			sourceTree = "<group>";
+		};
+		45B51E422BFEBF8400AE56FE /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E432BFEBF9300AE56FE /* NotificationService.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +565,7 @@
 				45B51DD72BFADA4700AE56FE /* TimerView.swift in Sources */,
 				45B51E2E2BFCC45200AE56FE /* VoiceMemo.swift in Sources */,
 				45B51DF02BFB18DA00AE56FE /* Todo.swift in Sources */,
+				45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */,
 				45B51DEC2BFAF99F00AE56FE /* TodoDetailView.swift in Sources */,
 				45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */,
 				45B51DF42BFB20A900AE56FE /* TopRightButtonView.swift in Sources */,
@@ -556,6 +573,7 @@
 				45B51DDB2BFADA6A00AE56FE /* TextMemoView.swift in Sources */,
 				45B51DEE2BFAF9EE00AE56FE /* FloatingButtonView.swift in Sources */,
 				45B51E302BFD816200AE56FE /* DiskStorage.swift in Sources */,
+				45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */,
 				45B51DD92BFADA5F00AE56FE /* VoiceMemoView.swift in Sources */,
 				45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */,
 				45B51E2C2BFC8F0D00AE56FE /* TimeInterval+Extension.swift in Sources */,
@@ -725,6 +743,7 @@
 				DEVELOPMENT_TEAM = 8PRWAG4355;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMemo/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱에서 음성 메모 기능을 위해 마이크에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -756,6 +775,7 @@
 				DEVELOPMENT_TEAM = 8PRWAG4355;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMemo/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱에서 음성 메모 기능을 위해 마이크에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
