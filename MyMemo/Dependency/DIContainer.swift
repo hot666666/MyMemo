@@ -11,9 +11,13 @@ import Foundation
 final class DIContainer {
     let diskStorage: DiskStorageType
     let audioRecordService: AudioRecordServiceType
+    let notificationService: NotificationServiceType
     
-    init(diskStorage: DiskStorageType = DiskStorage(), audioRecordService: AudioRecordServiceType = AudioRecordService()) {
+    init(diskStorage: DiskStorageType = DiskStorage(),
+         audioRecordService: AudioRecordServiceType = AudioRecordService(),
+         notificationService: NotificationServiceType = NotificationService()) {
         self.diskStorage = diskStorage
         self.audioRecordService = audioRecordService
+        self.notificationService = notificationService
     }
 }

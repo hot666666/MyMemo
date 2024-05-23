@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct MyMemoApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         @State var container: DIContainer = .init()
         

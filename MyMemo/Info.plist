@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>앱에서 알림 기능을 위해 알림 기능 동의가 필요합니다.</string>
+</dict>
+</plist>
