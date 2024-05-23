@@ -9,11 +9,11 @@ import Foundation
 
 
 enum Tab: String, CaseIterable {
-    case todoList = "TodoList"
-    case textMemo = "TextMemo"
-    case voiceMemo = "VoiceMemo"
-    case timer = "Timer"
-    case setting = "Setting"
+    case todoList = "할일 목록"
+    case textMemo = "메모"
+    case voiceMemo = "음성메모"
+    case timer = "타이머"
+    case setting = "설정"
     
     
     var systemImage: String {
