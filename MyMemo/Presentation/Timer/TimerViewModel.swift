@@ -27,7 +27,7 @@ class TimerViewModel {
     
     var animationValue = 0.0
     
-    var isSettable: Bool {
+    var isSetDisabled: Bool {
         hour == 0 && minute == 0 && second == 0
     }
     

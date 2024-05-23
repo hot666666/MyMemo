@@ -12,6 +12,7 @@ class VoiceMemoViewModel{
     @ObservationIgnored var container: DIContainer
     
     var voiceMemos: [VoiceMemo]
+    var voiceMemosCount: Int { voiceMemos.count }
     var selectedVoiceMemo: VoiceMemo? = nil
     var isDisplayRemoveVoiceRecorderAlert: Bool = false
     var isDisplayAlert: Bool = false

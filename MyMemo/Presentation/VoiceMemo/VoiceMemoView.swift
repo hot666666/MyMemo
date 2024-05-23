@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct VoiceMemoView: View {
-    @Environment(VoiceMemoViewModel.self) var voiceMemoViewModel
+    @Environment(VoiceMemoViewModel.self) private var voiceMemoViewModel
+    @Environment(HomeViewModel.self) private var homeViewModel
 
     var body: some View {
         ZStack{
@@ -21,13 +22,10 @@ struct VoiceMemoView: View {
                 }
             } else {
                 VStack{
-                    
                     titleView
-                    
                     VoiceMemoListView()
                 }
             }
-            
             RecordButtonView()
                 .disabled(voiceMemoViewModel.isLoading)
         }
@@ -48,6 +46,7 @@ struct VoiceMemoView: View {
         }
         .task{
             await voiceMemoViewModel.loadVoiceMemos()
+            homeViewModel.setVoiceMemosCount(voiceMemoViewModel.voiceMemos.count)
         }
     }
     
@@ -153,6 +152,8 @@ private struct VoiceMemoRowView: View {
 #Preview {
     let contaienr: DIContainer = .init()
     let voiceMemoViewModel: VoiceMemoViewModel = .init(container: contaienr)
+    let HomeViewModel: HomeViewModel = .init()
     return VoiceMemoView()
         .environment(voiceMemoViewModel)
+        .environment(HomeViewModel)
 }

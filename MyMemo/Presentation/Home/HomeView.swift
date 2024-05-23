@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var activeTab: Tab = .voiceMemo
+    @State var homeViewModel: HomeViewModel = .init()
     @State var todoListViewModel: TodoListViewModel = .init()
     @State var textMemoViewModel: TextMemoViewModel = .init()
-    @State var timerViewModel: TimerViewModel
     @State var voiceMemoViewModel: VoiceMemoViewModel
+    @State var timerViewModel: TimerViewModel
     
     init(container: DIContainer){
-        _voiceMemoViewModel = State(initialValue: .init(container: container))
-        _timerViewModel = State(initialValue: .init(container: container))
+        _voiceMemoViewModel = State(wrappedValue: .init(container: container))
+        _timerViewModel = State(wrappedValue: .init(container: container))
     }
     
     var body: some View {
-        VStack {
-            TabView(selection: $activeTab) {
+        VStack(spacing: 0) {
+            TabView(selection: $homeViewModel.activeTab) {
                 TodoListView()
+                    .onChange(of: todoListViewModel.todoListCount) { homeViewModel.setTodosCount($1) }
                     .environment(todoListViewModel)
                     .tag(Tab.todoList)
                 
                 TextMemoView()
+                    .onChange(of: textMemoViewModel.textMemosCount) { homeViewModel.setMemosCount($1) }
                     .environment(textMemoViewModel)
                     .tag(Tab.textMemo)
                 
                 VoiceMemoView()
+                    .onChange(of: voiceMemoViewModel.voiceMemosCount) { homeViewModel.setVoiceMemosCount($1) }
                     .environment(voiceMemoViewModel)
                     .tag(Tab.voiceMemo)
                 
@@ -41,8 +44,10 @@ struct HomeView: View {
                 SettingView()
                     .tag(Tab.setting)
             }
+            .environment(homeViewModel)
             
             CustomTabBar()
+                .shadow(radius: 20)
         }
     }
     
@@ -54,14 +59,15 @@ struct HomeView: View {
                         tint: tint,
                         inactiveTint: inactiveTint,
                         tab: $0,
-                        activeTab: $activeTab
+                        activeTab: $homeViewModel.activeTab
                     )
                 }
             }
-            .padding(10)
-            .background(Color.black.opacity(0.1).gradient) /// TabBar Color
+            .padding(20)
+            .background(Color.secondary.opacity(0.5).gradient) /// TabBar Color
+            .clipShape(Capsule())  /// TabBar Shape
+            .padding(.horizontal, 10)
         }
-        .shadow(radius: 30)
     }
 }
 
