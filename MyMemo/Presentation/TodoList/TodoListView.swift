@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodoListView: View {
-    @Environment(TodoListViewModel.self) var todoListViewModel
+    @Environment(TodoListViewModel.self) private var todoListViewModel
     
     var body: some View {
         ZStack{

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextMemoView: View {
-    @Environment(TextMemoViewModel.self) var textMemoViewModel
+    @Environment(TextMemoViewModel.self) private var textMemoViewModel
     
     var body: some View {
         ZStack{

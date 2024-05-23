@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    @Environment(TimerViewModel.self) var timerViewModel
+    @Environment(TimerViewModel.self) private var timerViewModel
     
     var body: some View {
         if !timerViewModel.isTimerView {
@@ -41,7 +41,8 @@ struct TimerSettingView: View {
                     .bold()
                     .foregroundColor(.primary)
             })
-            .disabled(timerViewModel.isSettable)
+            .disabled(timerViewModel.isSetDisabled)
+            .opacity(timerViewModel.isSetDisabled ? 0.5 : 1)
             
             Spacer()
         }
@@ -70,7 +71,7 @@ struct TimerRunningView: View {
                 Button(action: {
                     timerViewModel.cancelBtnTapped()
                 }, label: {
-                    CircleView(text: "취소", color: .black.opacity(0.5))
+                    CircleView(text: "취소", color: .secondary.opacity(0.5))
                 })
                 .disabled(!timerViewModel.isPaused)
                 .opacity(timerViewModel.isPaused ? 1 : 0.5)
@@ -132,7 +133,9 @@ private struct TimePickerView: View {
     var body: some View {
         HStack(spacing: 0){
             TimePickerComponent(selection: Bindable(timerViewModel).hour)
+            Text(":")
             TimePickerComponent(selection: Bindable(timerViewModel).minute)
+            Text(":")
             TimePickerComponent(selection: Bindable(timerViewModel).second)
         }
     }
