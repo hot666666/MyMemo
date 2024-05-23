@@ -11,11 +11,12 @@ struct HomeView: View {
     @State var activeTab: Tab = .voiceMemo
     @State var todoListViewModel: TodoListViewModel = .init()
     @State var textMemoViewModel: TextMemoViewModel = .init()
-    @State var timerViewModel: TimerViewModel = .init()
+    @State var timerViewModel: TimerViewModel
     @State var voiceMemoViewModel: VoiceMemoViewModel
     
     init(container: DIContainer){
         _voiceMemoViewModel = State(initialValue: .init(container: container))
+        _timerViewModel = State(initialValue: .init(container: container))
     }
     
     var body: some View {

@@ -10,6 +10,8 @@ import SwiftUI
 
 @Observable
 class TimerViewModel {
+    @ObservationIgnored var container: DIContainer
+    
     var isTimerView: Bool = false
     
     var hour: Int = 0
@@ -29,6 +31,12 @@ class TimerViewModel {
         hour == 0 && minute == 0 && second == 0
     }
     
+    init(container: DIContainer){
+        self.container = container
+    }
+}
+
+extension TimerViewModel {
     func setBtnTapped() {
         timerTime = TimeInterval(3600*hour+60*minute+second)
         timeRemaining = timerTime
@@ -58,14 +66,20 @@ class TimerViewModel {
     private func startTimer() {
         guard timer == nil else { return }
         
+        if !container.notificationService.isAuthorized {
+            container.notificationService.requestAuthorization()
+        }
+        
         var backgroundTaskID: UIBackgroundTaskIdentifier?
         backgroundTaskID = UIApplication.shared.beginBackgroundTask {
+            /// completion hanlder(endBackgroundTask, .invalid UIBackgroundTaskIdentifier)
             if let task = backgroundTaskID {
                 UIApplication.shared.endBackgroundTask(task)
                 backgroundTaskID = .invalid
             }
         }
         
+        /// background task
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
@@ -74,7 +88,7 @@ class TimerViewModel {
                 }
             } else {
                 self.stopTimer()
-                //  self.notificationService.sendNotification()
+                self.container.notificationService.sendNotification()
                 
                 if let task = backgroundTaskID {
                     UIApplication.shared.endBackgroundTask(task)

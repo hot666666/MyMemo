@@ -149,7 +149,8 @@ private struct TimePickerView: View {
 
 
 #Preview {
-    let timerViewModel: TimerViewModel = .init()
+    let container: DIContainer = .init()
+    let timerViewModel: TimerViewModel = .init(container: container)
     return TimerView()
         .environment(timerViewModel)
 }
