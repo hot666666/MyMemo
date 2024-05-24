@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456034BF2C004267006D7500 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 45B51E502BFF170A00AE56FE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */; };
 		45B51D9D2BFAD63900AE56FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9C2BFAD63900AE56FE /* HomeView.swift */; };
 		45B51DA12BFAD63A00AE56FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B51DA02BFAD63A00AE56FE /* Assets.xcassets */; };
@@ -43,6 +44,12 @@
 		45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E402BFE172A00AE56FE /* TimerViewModel.swift */; };
 		45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E432BFEBF9300AE56FE /* NotificationService.swift */; };
 		45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */; };
+		45B51E4A2BFF157000AE56FE /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E492BFF157000AE56FE /* TodoEntity.swift */; };
+		45B51E4C2BFF157900AE56FE /* TextMemoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */; };
+		45B51E512BFF170A00AE56FE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45B51E502BFF170A00AE56FE /* RealmSwift */; };
+		45B51E542BFF207F00AE56FE /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E532BFF207F00AE56FE /* RealmRepository.swift */; };
+		45B51E572BFF27B100AE56FE /* TodoRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E562BFF27B100AE56FE /* TodoRealmService.swift */; };
+		45B51E592C00105C00AE56FE /* TextMemoRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,20 @@
 			remoteInfo = MyMemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		456034C02C004267006D7500 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				456034BF2C004267006D7500 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		45B51D972BFAD63900AE56FE /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +124,11 @@
 		45B51E432BFEBF9300AE56FE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B51E472BFEC68300AE56FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		45B51E492BFF157000AE56FE /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoEntity.swift; sourceTree = "<group>"; };
+		45B51E532BFF207F00AE56FE /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		45B51E562BFF27B100AE56FE /* TodoRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRealmService.swift; sourceTree = "<group>"; };
+		45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoRealmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B51E512BFF170A00AE56FE /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,37 +253,16 @@
 		45B51DC92BFAD72A00AE56FE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				45B51DCC2BFAD78200AE56FE /* Interface */,
-				45B51DCB2BFAD77600AE56FE /* UseCase */,
-				45B51DCA2BFAD76B00AE56FE /* Enitity */,
+				45B51E482BFF155F00AE56FE /* Entity */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		45B51DCA2BFAD76B00AE56FE /* Enitity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enitity;
-			sourceTree = "<group>";
-		};
-		45B51DCB2BFAD77600AE56FE /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		45B51DCC2BFAD78200AE56FE /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 		45B51DCD2BFAD79400AE56FE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E552BFF279500AE56FE /* Service */,
+				45B51E522BFF18A000AE56FE /* Repository */,
 				45B51E312BFD965100AE56FE /* Storage */,
 			);
 			path = Data;
@@ -416,6 +422,32 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		45B51E482BFF155F00AE56FE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E492BFF157000AE56FE /* TodoEntity.swift */,
+				45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		45B51E522BFF18A000AE56FE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E532BFF207F00AE56FE /* RealmRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		45B51E552BFF279500AE56FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E562BFF27B100AE56FE /* TodoRealmService.swift */,
+				45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,12 +458,16 @@
 				45B51D932BFAD63900AE56FE /* Sources */,
 				45B51D942BFAD63900AE56FE /* Frameworks */,
 				45B51D952BFAD63900AE56FE /* Resources */,
+				456034C02C004267006D7500 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MyMemo;
+			packageProductDependencies = (
+				45B51E502BFF170A00AE56FE /* RealmSwift */,
+			);
 			productName = MyMemo;
 			productReference = 45B51D972BFAD63900AE56FE /* MyMemo.app */;
 			productType = "com.apple.product-type.application";
@@ -504,6 +540,9 @@
 				Base,
 			);
 			mainGroup = 45B51D8E2BFAD63900AE56FE;
+			packageReferences = (
+				45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 45B51D982BFAD63900AE56FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -556,6 +595,7 @@
 				45B51D9D2BFAD63900AE56FE /* HomeView.swift in Sources */,
 				45B51DDD2BFADA7800AE56FE /* TodoListView.swift in Sources */,
 				45B51DF92BFB448700AE56FE /* TextMemoDetailView.swift in Sources */,
+				45B51E4A2BFF157000AE56FE /* TodoEntity.swift in Sources */,
 				45B51DF22BFB18F700AE56FE /* TodoListViewModel.swift in Sources */,
 				45B51DF62BFB42E300AE56FE /* TextMemo.swift in Sources */,
 				45B51E3A2BFDA9C900AE56FE /* AudioPlayerView.swift in Sources */,
@@ -563,16 +603,20 @@
 				45B51DE62BFAE35C00AE56FE /* DefaultView.swift in Sources */,
 				45B51E332BFD965F00AE56FE /* VoiceMemoObject.swift in Sources */,
 				45B51DD72BFADA4700AE56FE /* TimerView.swift in Sources */,
+				45B51E542BFF207F00AE56FE /* RealmRepository.swift in Sources */,
 				45B51E2E2BFCC45200AE56FE /* VoiceMemo.swift in Sources */,
 				45B51DF02BFB18DA00AE56FE /* Todo.swift in Sources */,
 				45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */,
 				45B51DEC2BFAF99F00AE56FE /* TodoDetailView.swift in Sources */,
 				45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */,
+				45B51E4C2BFF157900AE56FE /* TextMemoEntity.swift in Sources */,
 				45B51DF42BFB20A900AE56FE /* TopRightButtonView.swift in Sources */,
+				45B51E572BFF27B100AE56FE /* TodoRealmService.swift in Sources */,
 				45B51DE22BFADCC900AE56FE /* Tab.swift in Sources */,
 				45B51DDB2BFADA6A00AE56FE /* TextMemoView.swift in Sources */,
 				45B51DEE2BFAF9EE00AE56FE /* FloatingButtonView.swift in Sources */,
 				45B51E302BFD816200AE56FE /* DiskStorage.swift in Sources */,
+				45B51E592C00105C00AE56FE /* TextMemoRealmService.swift in Sources */,
 				45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */,
 				45B51DD92BFADA5F00AE56FE /* VoiceMemoView.swift in Sources */,
 				45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */,
@@ -912,6 +956,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45B51E502BFF170A00AE56FE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45B51D8F2BFAD63900AE56FE /* Project object */;
 }
