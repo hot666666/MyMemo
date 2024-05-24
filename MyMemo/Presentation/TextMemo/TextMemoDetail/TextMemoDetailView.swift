@@ -7,17 +7,41 @@
 
 import SwiftUI
 
+private enum ViewMode {
+    case create
+    case update
+}
+
 struct TextMemoDetailView: View {
     @Environment(TextMemoViewModel.self) var vm
-    @State var textMemo = TextMemo()
+    @State var textMemo: TextMemo
     @FocusState private var isTitleFieldFocused: Bool
+    
+    private var originalTextMemo: Bindable<TextMemo>?
+    private var viewMode: ViewMode {
+        originalTextMemo == nil ? .create : .update
+    }
+    
+    init(originalTextMemo: Bindable<TextMemo>? = nil){
+        if let originalTextMemo = originalTextMemo {
+            _textMemo = State(wrappedValue: originalTextMemo.wrappedValue)
+            self.originalTextMemo = originalTextMemo
+        } else {
+            _textMemo = State(wrappedValue: TextMemo())
+        }
+    }
     
     var body: some View {
         ZStack{
             TopRightButtonView(action: {
-                vm.addTextMemo(textMemo)
+                if var originalTextMemo = originalTextMemo {
+                    originalTextMemo.wrappedValue = textMemo
+                    vm.updateTextMemo(originalTextMemo.wrappedValue)
+                } else {
+                    vm.addTextMemo(textMemo)
+                }
                 vm.toggleIsDisplayTextMemoDetail()
-            }, btnType: .create)
+            }, btnType: viewMode == .create ? .create : .complete)
             .disabled(textMemo.title.isEmpty || textMemo.content.isEmpty)
             .opacity((textMemo.title.isEmpty || textMemo.content.isEmpty) ? 0.3 : 1)
             
@@ -31,13 +55,16 @@ struct TextMemoDetailView: View {
             }
             .offset(y: 20)
         }
+        .padding(20)
         .onAppear{
-            isTitleFieldFocused = true
+            if viewMode == .create {
+                isTitleFieldFocused = true
+            }
         }
     }
 }
 
 #Preview {
-    let textMemoViewModel: TextMemoViewModel = .init()
+    let textMemoViewModel: TextMemoViewModel = .init(container: .init())
     return TextMemoDetailView().environment(textMemoViewModel)
 }

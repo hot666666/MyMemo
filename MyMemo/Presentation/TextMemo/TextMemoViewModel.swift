@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Observation
+import SwiftUI
 
 @Observable
 class TextMemoViewModel {
@@ -15,8 +15,12 @@ class TextMemoViewModel {
     var isEditTextMemoMode = false
     var isDisplayTextMemoDetail = false
     var isShowingAlert = false
-
-    init(textMemos: [TextMemo] = []) {
+    
+    @ObservationIgnored var updateTextMemo: Bindable<TextMemo>?
+    @ObservationIgnored var container: DIContainer
+    
+    init(container: DIContainer, textMemos: [TextMemo] = []) {
+        self.container = container
         self.textMemos = textMemos
     }
 }
@@ -38,10 +42,6 @@ extension TextMemoViewModel {
         isDisplayTextMemoDetail.toggle()
     }
     
-    func addTextMemo(_ textMemo: TextMemo){
-        textMemos.append(textMemo)
-    }
-    
     func isSelectedInEditMode(_ textMemo: TextMemo) -> Bool {
         removeTextMemos.contains { textMemo.id == $0.id }
     }
@@ -54,6 +54,11 @@ extension TextMemoViewModel {
         }
     }
     
+    func tapTodoListItem(with todo: Bindable<TextMemo>) {
+        updateTextMemo = todo
+        isDisplayTextMemoDetail.toggle()
+    }
+    
     func topRightButtonTapped() {
         if !isEditTextMemoMode {
             isEditTextMemoMode = true
@@ -64,12 +69,26 @@ extension TextMemoViewModel {
             isEditTextMemoMode = false
         }
     }
+}
+
+extension TextMemoViewModel {
+    func fetchTextMemo(){
+        textMemos = container.textMemoRealmService.fetchAllTextMemo()
+    }
+    
+    func addTextMemo(_ textMemo: TextMemo){
+        let newTextMemo = container.textMemoRealmService.saveTextMemo(textMemo)
+        textMemos.append(newTextMemo)
+    }
+    
+    func updateTextMemo(_ textMemo: TextMemo){
+        container.textMemoRealmService.updateTextMemo(textMemo)
+    }
     
     func removeSelectedItems(isCanceled: Bool = false) {
-        if !isCanceled{
-            textMemos.removeAll { todo in
-                removeTextMemos.contains(todo)
-            }
+        if !isCanceled {
+            removeTextMemos.forEach { container.textMemoRealmService.deleteTextMemo($0) }
+            textMemos.removeAll { removeTextMemos.contains($0) }
         }
         removeTextMemos.removeAll()
     }

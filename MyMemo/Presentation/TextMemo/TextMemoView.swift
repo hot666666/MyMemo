@@ -31,10 +31,9 @@ struct TextMemoView: View {
                 .padding(.trailing, 20)
             }
         }
-        .sheet(isPresented: Bindable(textMemoViewModel).isDisplayTextMemoDetail, content: {
-            TextMemoDetailView()
-                .padding(20)
-        })
+        .sheet(isPresented: Bindable(textMemoViewModel).isDisplayTextMemoDetail,
+               onDismiss: { textMemoViewModel.updateTextMemo = nil },
+               content: { TextMemoDetailView(originalTextMemo: textMemoViewModel.updateTextMemo) })
         .alert(isPresented: Bindable(textMemoViewModel).isShowingAlert){
             Alert(
                 title: Text("알림"),
@@ -46,6 +45,9 @@ struct TextMemoView: View {
                     textMemoViewModel.removeSelectedItems(isCanceled: true)
                 }
             )
+        }
+        .onAppear {
+            textMemoViewModel.fetchTextMemo()
         }
         .environment(textMemoViewModel)
     }
@@ -85,7 +87,10 @@ private struct TextMemoContenCellView: View {
         HStack{
             VStack(alignment: .leading){
                 Text(textMemo.title)
-                Text("\(textMemo.day.formattedDay) - \(textMemo.time.formattedTime)")
+                Text("\(textMemo.day.formattedDay) - \(textMemo.day.formattedTime)")
+            }
+            .onTapGesture {
+                vm.tapTodoListItem(with: Bindable(textMemo))
             }
             
             Spacer()
@@ -107,6 +112,6 @@ private struct TextMemoContenCellView: View {
 
 
 #Preview("TextMemo") {
-    let textMemoViewModel: TextMemoViewModel = .init(textMemos: TextMemo.stub)
+    let textMemoViewModel: TextMemoViewModel = .init(container: .init(), textMemos: TextMemo.stub)
     return TextMemoView().environment(textMemoViewModel)
 }
