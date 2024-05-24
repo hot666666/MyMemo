@@ -24,13 +24,25 @@ protocol DiskStorageType {
 class DiskStorage: DiskStorageType {
     
     let fileManager: FileManager
-    let path: URL
+    let storedURL: URL
     
     init(fileManager: FileManager = .default,
          directory: FileManager.SearchPathDirectory = .documentDirectory,
-         domainMask: FileManager.SearchPathDomainMask = .userDomainMask) {
+         domainMask: FileManager.SearchPathDomainMask = .userDomainMask,
+         subdirectory: String = "voiceMemos") {
         self.fileManager = fileManager
-        self.path = self.fileManager.urls(for: directory, in: domainMask)[0]
+        
+        let documentsURL = self.fileManager.urls(for: directory, in: domainMask)[0]
+        self.storedURL = documentsURL.appendingPathComponent(subdirectory)
+
+        /// 서브 디렉터리가 없으면 생성
+        if !fileManager.fileExists(atPath: self.storedURL.path) {
+            do {
+                try fileManager.createDirectory(at: self.storedURL, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                fatalError("Failed to create directory: \(error)")
+            }
+        }
     }
     
     func getFile(for url: URL) -> VoiceMemoObject? {
@@ -52,14 +64,14 @@ class DiskStorage: DiskStorageType {
     
     func getFileURLs() throws -> [URL] {
         do {
-            return try fileManager.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
+            return try fileManager.contentsOfDirectory(at: storedURL, includingPropertiesForKeys: nil)
         } catch {
             throw DiskStorageError.getContentsOfDirectoryError
         }
     }
     
     func getNewFileURL(fileName: String) -> URL {
-        path.appendingPathComponent(fileName)
+        storedURL.appendingPathComponent(fileName)
     }
     
     func removeFile(url: URL) throws {
