@@ -7,13 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456034BF2C004267006D7500 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 45B51E502BFF170A00AE56FE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */; };
-		45B51D9D2BFAD63900AE56FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9C2BFAD63900AE56FE /* ContentView.swift */; };
+		45B51D9D2BFAD63900AE56FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51D9C2BFAD63900AE56FE /* HomeView.swift */; };
 		45B51DA12BFAD63A00AE56FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B51DA02BFAD63A00AE56FE /* Assets.xcassets */; };
 		45B51DA42BFAD63A00AE56FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B51DA32BFAD63A00AE56FE /* Preview Assets.xcassets */; };
 		45B51DAE2BFAD63A00AE56FE /* MyMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DAD2BFAD63A00AE56FE /* MyMemoTests.swift */; };
 		45B51DB82BFAD63A00AE56FE /* MyMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DB72BFAD63A00AE56FE /* MyMemoUITests.swift */; };
 		45B51DBA2BFAD63A00AE56FE /* MyMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DB92BFAD63A00AE56FE /* MyMemoUITestsLaunchTests.swift */; };
+		45B51DD52BFADA2C00AE56FE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DD42BFADA2C00AE56FE /* SettingView.swift */; };
+		45B51DD72BFADA4700AE56FE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DD62BFADA4700AE56FE /* TimerView.swift */; };
+		45B51DD92BFADA5F00AE56FE /* VoiceMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DD82BFADA5F00AE56FE /* VoiceMemoView.swift */; };
+		45B51DDB2BFADA6A00AE56FE /* TextMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DDA2BFADA6A00AE56FE /* TextMemoView.swift */; };
+		45B51DDD2BFADA7800AE56FE /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DDC2BFADA7800AE56FE /* TodoListView.swift */; };
+		45B51DDF2BFADBA800AE56FE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DDE2BFADBA800AE56FE /* HomeViewModel.swift */; };
+		45B51DE22BFADCC900AE56FE /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DE12BFADCC900AE56FE /* Tab.swift */; };
+		45B51DE62BFAE35C00AE56FE /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DE52BFAE35C00AE56FE /* DefaultView.swift */; };
+		45B51DE92BFAF28500AE56FE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DE82BFAF28500AE56FE /* Date+Extension.swift */; };
+		45B51DEC2BFAF99F00AE56FE /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DEB2BFAF99F00AE56FE /* TodoDetailView.swift */; };
+		45B51DEE2BFAF9EE00AE56FE /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DED2BFAF9EE00AE56FE /* FloatingButtonView.swift */; };
+		45B51DF02BFB18DA00AE56FE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DEF2BFB18DA00AE56FE /* Todo.swift */; };
+		45B51DF22BFB18F700AE56FE /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF12BFB18F700AE56FE /* TodoListViewModel.swift */; };
+		45B51DF42BFB20A900AE56FE /* TopRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF32BFB20A900AE56FE /* TopRightButtonView.swift */; };
+		45B51DF62BFB42E300AE56FE /* TextMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF52BFB42E300AE56FE /* TextMemo.swift */; };
+		45B51DF92BFB448700AE56FE /* TextMemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */; };
+		45B51DFB2BFB4EF600AE56FE /* TextMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */; };
+		45B51E0B2BFC213900AE56FE /* VoiceMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E0A2BFC213900AE56FE /* VoiceMemoViewModel.swift */; };
+		45B51E2C2BFC8F0D00AE56FE /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E2B2BFC8F0D00AE56FE /* TimeInterval+Extension.swift */; };
+		45B51E2E2BFCC45200AE56FE /* VoiceMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E2D2BFCC45200AE56FE /* VoiceMemo.swift */; };
+		45B51E302BFD816200AE56FE /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E2F2BFD816200AE56FE /* DiskStorage.swift */; };
+		45B51E332BFD965F00AE56FE /* VoiceMemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E322BFD965F00AE56FE /* VoiceMemoObject.swift */; };
+		45B51E372BFD96B600AE56FE /* AudioRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E362BFD96B600AE56FE /* AudioRecordService.swift */; };
+		45B51E3A2BFDA9C900AE56FE /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E392BFDA9C900AE56FE /* AudioPlayerView.swift */; };
+		45B51E3C2BFDAA0E00AE56FE /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45B51E3B2BFDAA0E00AE56FE /* example.mp3 */; };
+		45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */; };
+		45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E402BFE172A00AE56FE /* TimerViewModel.swift */; };
+		45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E432BFEBF9300AE56FE /* NotificationService.swift */; };
+		45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */; };
+		45B51E4A2BFF157000AE56FE /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E492BFF157000AE56FE /* TodoEntity.swift */; };
+		45B51E4C2BFF157900AE56FE /* TextMemoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */; };
+		45B51E512BFF170A00AE56FE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45B51E502BFF170A00AE56FE /* RealmSwift */; };
+		45B51E542BFF207F00AE56FE /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E532BFF207F00AE56FE /* RealmRepository.swift */; };
+		45B51E572BFF27B100AE56FE /* TodoRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E562BFF27B100AE56FE /* TodoRealmService.swift */; };
+		45B51E592C00105C00AE56FE /* TextMemoRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +69,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		456034C02C004267006D7500 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				456034BF2C004267006D7500 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		45B51D972BFAD63900AE56FE /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoApp.swift; sourceTree = "<group>"; };
-		45B51D9C2BFAD63900AE56FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		45B51D9C2BFAD63900AE56FE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		45B51DA02BFAD63A00AE56FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B51DA32BFAD63A00AE56FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45B51DA92BFAD63A00AE56FE /* MyMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +94,41 @@
 		45B51DB32BFAD63A00AE56FE /* MyMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B51DB72BFAD63A00AE56FE /* MyMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoUITests.swift; sourceTree = "<group>"; };
 		45B51DB92BFAD63A00AE56FE /* MyMemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		45B51DD42BFADA2C00AE56FE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		45B51DD62BFADA4700AE56FE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		45B51DD82BFADA5F00AE56FE /* VoiceMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoView.swift; sourceTree = "<group>"; };
+		45B51DDA2BFADA6A00AE56FE /* TextMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoView.swift; sourceTree = "<group>"; };
+		45B51DDC2BFADA7800AE56FE /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		45B51DDE2BFADBA800AE56FE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		45B51DE12BFADCC900AE56FE /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		45B51DE52BFAE35C00AE56FE /* DefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
+		45B51DE82BFAF28500AE56FE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		45B51DEB2BFAF99F00AE56FE /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		45B51DED2BFAF9EE00AE56FE /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
+		45B51DEF2BFB18DA00AE56FE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		45B51DF12BFB18F700AE56FE /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		45B51DF32BFB20A900AE56FE /* TopRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightButtonView.swift; sourceTree = "<group>"; };
+		45B51DF52BFB42E300AE56FE /* TextMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemo.swift; sourceTree = "<group>"; };
+		45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoDetailView.swift; sourceTree = "<group>"; };
+		45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoViewModel.swift; sourceTree = "<group>"; };
+		45B51E0A2BFC213900AE56FE /* VoiceMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoViewModel.swift; sourceTree = "<group>"; };
+		45B51E2B2BFC8F0D00AE56FE /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
+		45B51E2D2BFCC45200AE56FE /* VoiceMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemo.swift; sourceTree = "<group>"; };
+		45B51E2F2BFD816200AE56FE /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = MyMemo/Data/Storage/DiskStorage.swift; sourceTree = SOURCE_ROOT; };
+		45B51E322BFD965F00AE56FE /* VoiceMemoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoObject.swift; sourceTree = "<group>"; };
+		45B51E362BFD96B600AE56FE /* AudioRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordService.swift; sourceTree = "<group>"; };
+		45B51E392BFDA9C900AE56FE /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		45B51E3B2BFDAA0E00AE56FE /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
+		45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		45B51E402BFE172A00AE56FE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		45B51E432BFEBF9300AE56FE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B51E472BFEC68300AE56FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		45B51E492BFF157000AE56FE /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoEntity.swift; sourceTree = "<group>"; };
+		45B51E532BFF207F00AE56FE /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		45B51E562BFF27B100AE56FE /* TodoRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRealmService.swift; sourceTree = "<group>"; };
+		45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMemoRealmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B51E512BFF170A00AE56FE /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +180,14 @@
 		45B51D992BFAD63900AE56FE /* MyMemo */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E472BFEC68300AE56FE /* Info.plist */,
+				45B51E3D2BFDCE9900AE56FE /* Dependency */,
 				45B51DC62BFAD69C00AE56FE /* Application */,
 				45B51DC82BFAD6E100AE56FE /* Presentation */,
 				45B51DC92BFAD72A00AE56FE /* Domain */,
 				45B51DCD2BFAD79400AE56FE /* Data */,
+				45B51E342BFD969800AE56FE /* Service */,
+				45B51DE32BFAE33500AE56FE /* Common */,
 				45B51DC72BFAD6C400AE56FE /* Resource */,
 				45B51DA22BFAD63A00AE56FE /* Preview Content */,
 			);
@@ -107,6 +197,7 @@
 		45B51DA22BFAD63A00AE56FE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E3B2BFDAA0E00AE56FE /* example.mp3 */,
 				45B51DA32BFAD63A00AE56FE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -133,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				45B51D9A2BFAD63900AE56FE /* MyMemoApp.swift */,
+				45B51E452BFEC5BB00AE56FE /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -148,8 +240,12 @@
 		45B51DC82BFAD6E100AE56FE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				45B51DCE2BFAD7C800AE56FE /* Model */,
-				45B51D9C2BFAD63900AE56FE /* ContentView.swift */,
+				45B51DE02BFADBAC00AE56FE /* Home */,
+				45B51DD32BFAD9BB00AE56FE /* Setting */,
+				45B51DD22BFAD9B100AE56FE /* Timer */,
+				45B51DD12BFAD99700AE56FE /* VoiceMemo */,
+				45B51DD02BFAD98F00AE56FE /* TextMemo */,
+				45B51DCF2BFAD98500AE56FE /* TodoList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -157,46 +253,199 @@
 		45B51DC92BFAD72A00AE56FE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				45B51DCC2BFAD78200AE56FE /* Interface */,
-				45B51DCB2BFAD77600AE56FE /* UseCase */,
-				45B51DCA2BFAD76B00AE56FE /* Enitity */,
+				45B51E482BFF155F00AE56FE /* Entity */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		45B51DCA2BFAD76B00AE56FE /* Enitity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enitity;
-			sourceTree = "<group>";
-		};
-		45B51DCB2BFAD77600AE56FE /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		45B51DCC2BFAD78200AE56FE /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 		45B51DCD2BFAD79400AE56FE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				45B51E552BFF279500AE56FE /* Service */,
+				45B51E522BFF18A000AE56FE /* Repository */,
+				45B51E312BFD965100AE56FE /* Storage */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		45B51DCE2BFAD7C800AE56FE /* Model */ = {
+		45B51DCF2BFAD98500AE56FE /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				45B51DEF2BFB18DA00AE56FE /* Todo.swift */,
+				45B51DDC2BFADA7800AE56FE /* TodoListView.swift */,
+				45B51DF12BFB18F700AE56FE /* TodoListViewModel.swift */,
+				45B51DEA2BFAF98B00AE56FE /* TodoDetail */,
 			);
-			path = Model;
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		45B51DD02BFAD98F00AE56FE /* TextMemo */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DF52BFB42E300AE56FE /* TextMemo.swift */,
+				45B51DDA2BFADA6A00AE56FE /* TextMemoView.swift */,
+				45B51DFA2BFB4EF600AE56FE /* TextMemoViewModel.swift */,
+				45B51DF72BFB446000AE56FE /* TextMemoDetail */,
+			);
+			path = TextMemo;
+			sourceTree = "<group>";
+		};
+		45B51DD12BFAD99700AE56FE /* VoiceMemo */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E2D2BFCC45200AE56FE /* VoiceMemo.swift */,
+				45B51DD82BFADA5F00AE56FE /* VoiceMemoView.swift */,
+				45B51E0A2BFC213900AE56FE /* VoiceMemoViewModel.swift */,
+				45B51E382BFDA9A500AE56FE /* AuidoPlayerView */,
+			);
+			path = VoiceMemo;
+			sourceTree = "<group>";
+		};
+		45B51DD22BFAD9B100AE56FE /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DD62BFADA4700AE56FE /* TimerView.swift */,
+				45B51E402BFE172A00AE56FE /* TimerViewModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		45B51DD32BFAD9BB00AE56FE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DD42BFADA2C00AE56FE /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		45B51DE02BFADBAC00AE56FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DE12BFADCC900AE56FE /* Tab.swift */,
+				45B51D9C2BFAD63900AE56FE /* HomeView.swift */,
+				45B51DDE2BFADBA800AE56FE /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		45B51DE32BFAE33500AE56FE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DE72BFAF27800AE56FE /* Extension */,
+				45B51DE42BFAE34200AE56FE /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		45B51DE42BFAE34200AE56FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DE52BFAE35C00AE56FE /* DefaultView.swift */,
+				45B51DED2BFAF9EE00AE56FE /* FloatingButtonView.swift */,
+				45B51DF32BFB20A900AE56FE /* TopRightButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45B51DE72BFAF27800AE56FE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DE82BFAF28500AE56FE /* Date+Extension.swift */,
+				45B51E2B2BFC8F0D00AE56FE /* TimeInterval+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		45B51DEA2BFAF98B00AE56FE /* TodoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DEB2BFAF99F00AE56FE /* TodoDetailView.swift */,
+			);
+			path = TodoDetail;
+			sourceTree = "<group>";
+		};
+		45B51DF72BFB446000AE56FE /* TextMemoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				45B51DF82BFB448700AE56FE /* TextMemoDetailView.swift */,
+			);
+			path = TextMemoDetail;
+			sourceTree = "<group>";
+		};
+		45B51E312BFD965100AE56FE /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E2F2BFD816200AE56FE /* DiskStorage.swift */,
+				45B51E322BFD965F00AE56FE /* VoiceMemoObject.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		45B51E342BFD969800AE56FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E422BFEBF8400AE56FE /* Notification */,
+				45B51E352BFD96A000AE56FE /* AudioRecord */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		45B51E352BFD96A000AE56FE /* AudioRecord */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E362BFD96B600AE56FE /* AudioRecordService.swift */,
+			);
+			path = AudioRecord;
+			sourceTree = "<group>";
+		};
+		45B51E382BFDA9A500AE56FE /* AuidoPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E392BFDA9C900AE56FE /* AudioPlayerView.swift */,
+			);
+			path = AuidoPlayerView;
+			sourceTree = "<group>";
+		};
+		45B51E3D2BFDCE9900AE56FE /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E3E2BFDCEA800AE56FE /* DIContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		45B51E422BFEBF8400AE56FE /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E432BFEBF9300AE56FE /* NotificationService.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		45B51E482BFF155F00AE56FE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E492BFF157000AE56FE /* TodoEntity.swift */,
+				45B51E4B2BFF157900AE56FE /* TextMemoEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		45B51E522BFF18A000AE56FE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E532BFF207F00AE56FE /* RealmRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		45B51E552BFF279500AE56FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				45B51E562BFF27B100AE56FE /* TodoRealmService.swift */,
+				45B51E582C00105C00AE56FE /* TextMemoRealmService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +458,16 @@
 				45B51D932BFAD63900AE56FE /* Sources */,
 				45B51D942BFAD63900AE56FE /* Frameworks */,
 				45B51D952BFAD63900AE56FE /* Resources */,
+				456034C02C004267006D7500 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MyMemo;
+			packageProductDependencies = (
+				45B51E502BFF170A00AE56FE /* RealmSwift */,
+			);
 			productName = MyMemo;
 			productReference = 45B51D972BFAD63900AE56FE /* MyMemo.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +540,9 @@
 				Base,
 			);
 			mainGroup = 45B51D8E2BFAD63900AE56FE;
+			packageReferences = (
+				45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 45B51D982BFAD63900AE56FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B51E3C2BFDAA0E00AE56FE /* example.mp3 in Resources */,
 				45B51DA42BFAD63A00AE56FE /* Preview Assets.xcassets in Resources */,
 				45B51DA12BFAD63A00AE56FE /* Assets.xcassets in Resources */,
 			);
@@ -329,8 +586,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B51D9D2BFAD63900AE56FE /* ContentView.swift in Sources */,
+				45B51E412BFE172A00AE56FE /* TimerViewModel.swift in Sources */,
+				45B51DD52BFADA2C00AE56FE /* SettingView.swift in Sources */,
+				45B51E372BFD96B600AE56FE /* AudioRecordService.swift in Sources */,
+				45B51DFB2BFB4EF600AE56FE /* TextMemoViewModel.swift in Sources */,
+				45B51DE92BFAF28500AE56FE /* Date+Extension.swift in Sources */,
+				45B51E0B2BFC213900AE56FE /* VoiceMemoViewModel.swift in Sources */,
+				45B51D9D2BFAD63900AE56FE /* HomeView.swift in Sources */,
+				45B51DDD2BFADA7800AE56FE /* TodoListView.swift in Sources */,
+				45B51DF92BFB448700AE56FE /* TextMemoDetailView.swift in Sources */,
+				45B51E4A2BFF157000AE56FE /* TodoEntity.swift in Sources */,
+				45B51DF22BFB18F700AE56FE /* TodoListViewModel.swift in Sources */,
+				45B51DF62BFB42E300AE56FE /* TextMemo.swift in Sources */,
+				45B51E3A2BFDA9C900AE56FE /* AudioPlayerView.swift in Sources */,
+				45B51DDF2BFADBA800AE56FE /* HomeViewModel.swift in Sources */,
+				45B51DE62BFAE35C00AE56FE /* DefaultView.swift in Sources */,
+				45B51E332BFD965F00AE56FE /* VoiceMemoObject.swift in Sources */,
+				45B51DD72BFADA4700AE56FE /* TimerView.swift in Sources */,
+				45B51E542BFF207F00AE56FE /* RealmRepository.swift in Sources */,
+				45B51E2E2BFCC45200AE56FE /* VoiceMemo.swift in Sources */,
+				45B51DF02BFB18DA00AE56FE /* Todo.swift in Sources */,
+				45B51E462BFEC5BB00AE56FE /* AppDelegate.swift in Sources */,
+				45B51DEC2BFAF99F00AE56FE /* TodoDetailView.swift in Sources */,
 				45B51D9B2BFAD63900AE56FE /* MyMemoApp.swift in Sources */,
+				45B51E4C2BFF157900AE56FE /* TextMemoEntity.swift in Sources */,
+				45B51DF42BFB20A900AE56FE /* TopRightButtonView.swift in Sources */,
+				45B51E572BFF27B100AE56FE /* TodoRealmService.swift in Sources */,
+				45B51DE22BFADCC900AE56FE /* Tab.swift in Sources */,
+				45B51DDB2BFADA6A00AE56FE /* TextMemoView.swift in Sources */,
+				45B51DEE2BFAF9EE00AE56FE /* FloatingButtonView.swift in Sources */,
+				45B51E302BFD816200AE56FE /* DiskStorage.swift in Sources */,
+				45B51E592C00105C00AE56FE /* TextMemoRealmService.swift in Sources */,
+				45B51E442BFEBF9300AE56FE /* NotificationService.swift in Sources */,
+				45B51DD92BFADA5F00AE56FE /* VoiceMemoView.swift in Sources */,
+				45B51E3F2BFDCEA800AE56FE /* DIContainer.swift in Sources */,
+				45B51E2C2BFC8F0D00AE56FE /* TimeInterval+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -476,7 +766,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -497,11 +787,14 @@
 				DEVELOPMENT_TEAM = 8PRWAG4355;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMemo/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱에서 음성 메모 기능을 위해 마이크에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,11 +819,14 @@
 				DEVELOPMENT_TEAM = 8PRWAG4355;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMemo/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱에서 음성 메모 기능을 위해 마이크에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,6 +956,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45B51E502BFF170A00AE56FE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45B51E4D2BFF170A00AE56FE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45B51D8F2BFAD63900AE56FE /* Project object */;
 }

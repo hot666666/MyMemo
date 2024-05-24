@@ -10,9 +10,14 @@ import SwiftData
 
 @main
 struct MyMemoApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
+        @State var container: DIContainer = .init()
+        
         WindowGroup {
-            ContentView()
+            HomeView(container: container)
+                .environment(container)
         }
     }
 }
