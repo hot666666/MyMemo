@@ -12,12 +12,19 @@ final class DIContainer {
     let diskStorage: DiskStorageType
     let audioRecordService: AudioRecordServiceType
     let notificationService: NotificationServiceType
+    let todoRealmService: TodoRealmServiceType
+    let textMemoRealmService: TextMemoRealmServiceType
     
     init(diskStorage: DiskStorageType = DiskStorage(),
          audioRecordService: AudioRecordServiceType = AudioRecordService(),
-         notificationService: NotificationServiceType = NotificationService()) {
+         notificationService: NotificationServiceType = NotificationService(),
+         todoRealmService: TodoRealmServiceType = TodoRealmService(dataRepository: RealmRepository()),
+         textMemoRealmService: TextMemoRealmServiceType = TextMemoRealmService(dataRepository: RealmRepository())
+    ) {
         self.diskStorage = diskStorage
         self.audioRecordService = audioRecordService
         self.notificationService = notificationService
+        self.todoRealmService = todoRealmService
+        self.textMemoRealmService = textMemoRealmService
     }
 }
