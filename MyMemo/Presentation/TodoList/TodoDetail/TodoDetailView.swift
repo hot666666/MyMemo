@@ -7,25 +7,48 @@
 
 import SwiftUI
 
+private enum ViewMode {
+    case create
+    case update
+}
+
 struct TodoDetailView: View {
     @Environment(TodoListViewModel.self) var vm
-    @State var todo = Todo()
+    @State var todo: Todo
     @State var isDisplayCalendar = false
+    
+    private var originalTodo: Bindable<Todo>?
+    private var viewMode: ViewMode {
+        originalTodo == nil ? .create : .update
+    }
+    
+    init(originalTodo: Bindable<Todo>? = nil){
+        if let originalTodo = originalTodo {
+            _todo = State(wrappedValue: originalTodo.wrappedValue)
+            self.originalTodo = originalTodo
+        } else {
+            _todo = State(wrappedValue: Todo())
+        }
+    }
     
     var body: some View {
         ZStack{
-            Text("투두리스트를\n추가해 보세요.")
+            Text(viewMode == .create ? "투두리스트를\n추가해 보세요." : "투두리스트 수정")
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .font(.title)
                 .bold()
             
             TopRightButtonView(action: {
-                vm.addTodo(todo)
+                if var originalTodo = originalTodo {
+                    originalTodo.wrappedValue = todo
+                    vm.updateTodo(originalTodo.wrappedValue)
+                } else {
+                    vm.addTodo(todo)
+                }
                 vm.toggleIsDisplayTodoDetail()
-            }, btnType: .create)
+            }, btnType: viewMode == .create ? .create : .complete)
             .disabled(todo.title.isEmpty)
             .opacity(todo.title.isEmpty ? 0.3 : 1)
-            
             
             VStack{
                 TextField("제목을 입력하세요", text: $todo.title)
@@ -104,7 +127,7 @@ struct SelectTimeView: View {
 
 
 #Preview("TodoDetail") {
-    let todoListViewModel: TodoListViewModel = .init()
+    let todoListViewModel: TodoListViewModel = .init(container: .init())
     return TodoDetailView()
         .environment(todoListViewModel)
 }

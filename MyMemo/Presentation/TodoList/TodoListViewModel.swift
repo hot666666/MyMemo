@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Observation
+import SwiftUI
 
 @Observable
 class TodoListViewModel {
@@ -16,7 +16,11 @@ class TodoListViewModel {
     var isEditTodoMode = false
     var isShowingAlert = false
     
-    init(todoList: [Todo] = []){
+    @ObservationIgnored var updateTodo: Bindable<Todo>?
+    @ObservationIgnored var container: DIContainer
+    
+    init(container: DIContainer, todoList: [Todo] = []){
+        self.container = container
         self.todoList = todoList
     }
 }
@@ -34,16 +38,6 @@ extension TodoListViewModel {
         removeTodoList.count
     }
     
-    func addTodo(_ todo: Todo){
-        todoList.append(todo)
-    }
-    
-    func updateTodoIsDone(_ todo: Todo){
-        if let index = todoList.firstIndex(where: {todo.id == $0.id}){
-            todoList[index].isDone.toggle()
-        }
-    }
-    
     func isSelectedInEditMode(_ todo: Todo) -> Bool {
         removeTodoList.contains(where: {todo.id == $0.id})
     }
@@ -55,16 +49,7 @@ extension TodoListViewModel {
             removeTodoList.insert(todo)
         }
     }
-    
-    func removeSelectedItems(isCanceled: Bool = false) {
-        if !isCanceled{
-            todoList.removeAll { todo in
-                removeTodoList.contains(todo)
-            }
-        }
-        removeTodoList.removeAll()
-    }
-    
+        
     func topRightButtonTapped() {
         if !isEditTodoMode {
             isEditTodoMode = true
@@ -76,7 +61,40 @@ extension TodoListViewModel {
         }
     }
     
+    func tapTodoListItem(with todo: Bindable<Todo>) {
+        updateTodo = todo
+        isDisplayTodoDetail.toggle()
+    }
+    
     func toggleIsDisplayTodoDetail(){
         isDisplayTodoDetail.toggle()
+    }
+    
+    func updateTodoIsDone(_ todo: Bindable<Todo>){
+        todo.wrappedValue.isDone.toggle()
+        updateTodo(todo.wrappedValue)
+    }
+}
+
+extension TodoListViewModel {
+    func fetchTodo(){
+        todoList = container.todoRealmService.fetchAllTodos()
+    }
+    
+    func addTodo(_ todo: Todo){
+        let newTodo = container.todoRealmService.saveTodo(todo)
+        todoList.append(newTodo)
+    }
+    
+    func updateTodo(_ todo: Todo){
+        container.todoRealmService.updateTodo(todo)
+    }
+    
+    func removeSelectedItems(isCanceled: Bool = false) {
+        if !isCanceled {
+            removeTodoList.forEach { container.todoRealmService.deleteTodo($0) }
+            todoList.removeAll { removeTodoList.contains($0) }
+        }
+        removeTodoList.removeAll()
     }
 }

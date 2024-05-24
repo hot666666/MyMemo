@@ -31,9 +31,9 @@ struct TodoListView: View {
                 .padding(.trailing, 20)
             }
         }
-        .sheet(isPresented: Bindable(todoListViewModel).isDisplayTodoDetail, content: {
-            TodoDetailView()
-        })
+        .sheet(isPresented: Bindable(todoListViewModel).isDisplayTodoDetail,
+               onDismiss: { todoListViewModel.updateTodo = nil },
+               content: { TodoDetailView(originalTodo: todoListViewModel.updateTodo) })
         .alert(isPresented: Bindable(todoListViewModel).isShowingAlert){
             Alert(
                 title: Text("알림"),
@@ -46,6 +46,9 @@ struct TodoListView: View {
                 }
             )
         }
+        .onAppear {
+            todoListViewModel.fetchTodo()
+        }
         .environment(todoListViewModel)
     }
 }
@@ -55,7 +58,7 @@ private struct TodoListContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(vm.todoListCount)개의 할 일이\n있습니다.")
+            Text("\(vm.todoListCount)개의 할일이\n있습니다.")
                 .font(.title)
                 .bold()
                 .padding(.bottom, 30)
@@ -85,7 +88,7 @@ private struct TodoListContentCellView: View {
             if !vm.isEditTodoMode{
                 Button(
                     action: {
-                        vm.updateTodoIsDone(todo)
+                        vm.updateTodoIsDone(Bindable(todo))
                     },
                     label: { todo.isDone ? Image(systemName: "checkmark.square.fill") : Image(systemName: "square") }
                 )
@@ -96,6 +99,9 @@ private struct TodoListContentCellView: View {
                 Text(todo.title)
                     .strikethrough(todo.isDone)
                 Text("\(todo.day.formattedDay) - \(todo.time.formattedTime)")
+            }
+            .onTapGesture {
+                vm.tapTodoListItem(with: Bindable(todo))
             }
             
             Spacer()
@@ -116,6 +122,6 @@ private struct TodoListContentCellView: View {
 
 
 #Preview("TodoList") {
-    let todoListViewModel: TodoListViewModel = .init(todoList: Todo.stub)
+    let todoListViewModel: TodoListViewModel = .init(container: .init(), todoList: Todo.stub)
     return TodoListView().environment(todoListViewModel)
 }
