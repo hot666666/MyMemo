@@ -7,18 +7,32 @@
 
 import Foundation
 
-struct TextMemo: Identifiable, Hashable {
-    let id = UUID()
+@Observable
+class TextMemo: Identifiable, Hashable {
+    let id: String
     var title: String
     var content: String
     var day: Date
-    var time: Date
     
-    init(title: String = "", content: String = "", day: Date = .now, time: Date = .now) {
+    init(id: String = UUID().uuidString, title: String = "", content: String = "", day: Date = .now) {
+        self.id = id
         self.title = title
         self.content = content
         self.day = day
-        self.time = time
+    }
+    
+    static func == (lhs: TextMemo, rhs: TextMemo) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension TextMemo {
+    func toEntity() -> TextMemoEntity {
+        return TextMemoEntity(textMemo: self)
     }
 }
 

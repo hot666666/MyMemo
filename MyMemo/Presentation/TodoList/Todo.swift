@@ -7,18 +7,34 @@
 
 import Foundation
 
-struct Todo: Identifiable, Hashable {
-    let id = UUID()
+@Observable
+class Todo: Identifiable, Hashable {
+    var id: String
     var title: String
     var day: Date
     var time: Date
     var isDone: Bool
     
-    init(title: String = "", day: Date = .now, time: Date = .now, isDone: Bool = false) {
+    init(id: String = UUID().uuidString, title: String = "", day: Date = .now, time: Date = .now, isDone: Bool = false) {
+        self.id = id
         self.title = title
         self.day = day
         self.time = time
         self.isDone = isDone
+    }
+    
+    static func == (lhs: Todo, rhs: Todo) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension Todo {
+    func toEntity() -> TodoEntity {
+        return TodoEntity(todo: self)
     }
 }
 
