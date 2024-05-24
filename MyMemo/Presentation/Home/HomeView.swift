@@ -9,14 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     @State var homeViewModel: HomeViewModel = .init()
-    @State var todoListViewModel: TodoListViewModel = .init()
-    @State var textMemoViewModel: TextMemoViewModel = .init()
     @State var voiceMemoViewModel: VoiceMemoViewModel
     @State var timerViewModel: TimerViewModel
+    @State var todoListViewModel: TodoListViewModel
+    @State var textMemoViewModel: TextMemoViewModel
     
     init(container: DIContainer){
         _voiceMemoViewModel = State(wrappedValue: .init(container: container))
         _timerViewModel = State(wrappedValue: .init(container: container))
+        _todoListViewModel = State(wrappedValue: .init(container: container))
+        _textMemoViewModel = State(wrappedValue: .init(container: container))
+        
+        _todoListViewModel.wrappedValue.fetchTodo()
+        homeViewModel.setTodosCount(_todoListViewModel.wrappedValue.todoListCount)
+        
+        _textMemoViewModel.wrappedValue.fetchTextMemo()
+        homeViewModel.setMemosCount(_textMemoViewModel.wrappedValue.textMemosCount)
     }
     
     var body: some View {
