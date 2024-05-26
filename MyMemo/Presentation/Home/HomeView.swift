@@ -55,7 +55,7 @@ struct HomeView: View {
             .environment(homeViewModel)
             
             CustomTabBar()
-                .shadow(radius: 20)
+                .shadow(radius: 1)
         }
     }
     
@@ -72,7 +72,7 @@ struct HomeView: View {
                 }
             }
             .padding(20)
-            .background(Color.secondary.opacity(0.5).gradient) /// TabBar Color
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 8)) /// TabBar Color
             .clipShape(Capsule())  /// TabBar Shape
             .padding(.horizontal, 10)
         }
