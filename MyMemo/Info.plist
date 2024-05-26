@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>앱에서 음성 메모 기능을 위해 마이크에 접근이 필요합니다.</string>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>앱에서 알림 기능을 위해 알림 기능 동의가 필요합니다.</string>
 </dict>
